@@ -14,13 +14,13 @@ public class TodoService {
     private static List<Todo> todos = new ArrayList<>();
     private static int todosCount = 0;
     static {
-        todos.add(new Todo(++todosCount, "akash", "Get AWS certified", LocalDate.now().plusYears(1), false));
-        todos.add(new Todo(++todosCount, "akash", "Learn DevOps", LocalDate.now().plusYears(2), false));
-        todos.add(new Todo(++todosCount, "akash", "Learn full stack", LocalDate.now().plusYears(3), false));
+        todos.add(new Todo(++todosCount, "akash", "Get AWS certified 1", LocalDate.now().plusYears(1), false));
+        todos.add(new Todo(++todosCount, "akash", "Learn DevOps 1", LocalDate.now().plusYears(2), false));
+        todos.add(new Todo(++todosCount, "akash", "Learn full stack 1", LocalDate.now().plusYears(3), false));
     }
 
     public List<Todo> findByUserName(String username) {
-        Predicate<? super Todo> predicate = todo -> todo.getUsrename().equalsIgnoreCase(username);
+        Predicate<? super Todo> predicate = todo -> todo.getUsername().equalsIgnoreCase(username);
         return todos.stream().filter(predicate).collect(Collectors.toList());
     }
 
